@@ -167,7 +167,7 @@ export default function App() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="visit-card">
               <div>🍓🧇🥞</div>
               <h3>Sweet moments start here</h3>
-              <p>Replace this card with a Google Maps embed or a real shop photo when ready.</p>
+              <p>We will publish our Store Image soon.</p>
             </motion.div>
           </div>
         </div>
