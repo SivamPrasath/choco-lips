@@ -20,7 +20,7 @@ const products = [
 ];
 
 const menuItems = [
-  { name: "Nutella Strawberry Waffle", price: "$8.50" },
+  { name: "Nutella Strawberry Waffle", price: "$18.50" },
   { name: "Lotus Biscoff Crepe", price: "$7.90" },
   { name: "Honey Butter Pancake Stack", price: "$8.20" },
   { name: "Chocolate Banana Crepe", price: "$7.50" },
