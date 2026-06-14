@@ -137,3 +137,130 @@ footer { background: #3b2418; color: rgba(255,255,255,.7); text-align: center; p
     font-size: 64px;
   }
 }
+
+/* ===== MENU PRICING TABLE ===== */
+
+.pricing-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pricing-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  /* overflow: hidden; */
+}
+
+.pricing-table th {
+  background: rgba(255,255,255,0.12);
+  color: #fbcfe8;
+  font-weight: 900;
+  padding: 16px;
+  text-align: center;
+}
+
+.pricing-table td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.9);
+}
+
+.pricing-table th:first-child,
+.pricing-table td:first-child {
+  text-align: left;
+  font-weight: 800;
+  color: white;
+
+  position: sticky;
+
+  left: 0;
+
+  background: #4a2511;   /* same as favorites-section background */
+
+  z-index: 2;
+
+  text-align: left;
+
+  font-weight: 800;
+
+  min-width: 170px;
+
+  box-shadow: 6px 0 10px rgba(0,0,0,0.15);
+}
+
+.pricing-table th:first-child {
+
+  z-index: 3;
+}
+
+.pricing-table tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+@media (max-width: 768px) {
+  .pricing-table {
+    min-width: 650px;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+.swipe-hint {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .swipe-hint {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    animation: swipeMove 1.5s infinite ease-in-out;
+  }
+
+  @keyframes swipeMove {
+
+    0% {
+      transform: translateX(-6px);
+      opacity: .6;
+    }
+
+    50% {
+      transform: translateX(6px);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(-6px);
+      opacity: .6;
+    }
+
+  }
+
+}

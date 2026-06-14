@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Clock, Phone, Star, Sparkles, Heart, Camera, CakeSlice } from "lucide-react";
+import { MapPin, Clock, Phone, Sparkles, Heart, Camera, CakeSlice } from "lucide-react";
 
 const shop = {
   name: "Choco Lips",
-  tagline: "Fresh waffles, crepes, pancakes & fruit platters",
+  tagline: "Fresh waffles, crepes, churros & dessert platters",
   address: "Urban City Food Court Ambagahandhiya, Colombo",
   hours: "Open daily: 10:00 AM - 07:00 PM",
   phoneDisplay: "0756715141/ 0773101866",
@@ -12,20 +12,130 @@ const shop = {
   instagram: "@chocolips",
 };
 
+// const products = [
+//   { name: "Golden Waffles", desc: "Crispy outside, fluffy inside, topped with chocolate, berries, cream, or ice cream.", emoji: "🧇" },
+//   { name: "French Crepes", desc: "Soft folded crepes filled with Nutella, fruits, caramel, lotus, or vanilla cream.", emoji: "🥞" },
+//   { name: "Fluffy Pancakes", desc: "Stacked pancakes with honey, maple syrup, berries, butter, and whipped cream.", emoji: "🍯" },
+//   { name: "Fruit Platters", desc: "Fresh seasonal fruits arranged beautifully for sharing, gifting, and celebrations.", emoji: "🍓" },
+// ];
+
 const products = [
-  { name: "Golden Waffles", desc: "Crispy outside, fluffy inside, topped with chocolate, berries, cream, or ice cream.", emoji: "🧇" },
-  { name: "French Crepes", desc: "Soft folded crepes filled with Nutella, fruits, caramel, lotus, or vanilla cream.", emoji: "🥞" },
-  { name: "Fluffy Pancakes", desc: "Stacked pancakes with honey, maple syrup, berries, butter, and whipped cream.", emoji: "🍯" },
-  { name: "Fruit Platters", desc: "Fresh seasonal fruits arranged beautifully for sharing, gifting, and celebrations.", emoji: "🍓" },
+  {
+    name: "Sweet Waffles",
+    desc: "Choose from Milk Choco, White Choco, Strawberry or Nutella spreads with your favorite toppings.",
+    emoji: "🧇",
+  },
+  {
+    name: "Sweet Crepes",
+    desc: "Freshly made crepes with premium chocolate spreads and delicious toppings.",
+    emoji: "🥞",
+  },
+  {
+    name: "Churros",
+    desc: "Rs. 990 • Add Nuts +200 • Add Ice Cream +150",
+    emoji: "🍫",
+  },
+  {
+    name: "Waffle Platter",
+    desc: "Rs. 1590 • Add Nuts +200 • Add Ice Cream +150",
+    emoji: "🧇",
+  },
 ];
 
-const menuItems = [
-  { name: "Nutella Strawberry Waffle", price: "$18.50" },
-  { name: "Lotus Biscoff Crepe", price: "$7.90" },
-  { name: "Honey Butter Pancake Stack", price: "$8.20" },
-  { name: "Chocolate Banana Crepe", price: "$7.50" },
-  { name: "Mixed Berry Fruit Platter", price: "$10.00" },
-  { name: "Ice Cream Waffle Bowl", price: "$9.50" },
+// const menuItems = [
+//   { name: "Nutella Strawberry Waffle", price: "$18.50" },
+//   { name: "Lotus Biscoff Crepe", price: "$7.90" },
+//   { name: "Honey Butter Pancake Stack", price: "$8.20" },
+//   { name: "Chocolate Banana Crepe", price: "$7.50" },
+//   { name: "Mixed Berry Fruit Platter", price: "$10.00" },
+//   { name: "Ice Cream Waffle Bowl", price: "$9.50" },
+// ];
+
+const menuPricing = [
+  {
+    item: "Base Spread Only",
+    milk: "500",
+    white: "500",
+    strawberry: "650",
+    nutella: "650",
+  },
+  {
+    item: "Brownie",
+    milk: "700",
+    white: "750",
+    strawberry: "850",
+    nutella: "850",
+  },
+  {
+    item: "Strawberry Maniac",
+    milk: "750",
+    white: "750",
+    strawberry: "850",
+    nutella: "850",
+  },
+  {
+    item: "Oreo",
+    milk: "790",
+    white: "790",
+    strawberry: "900",
+    nutella: "890",
+  },
+  {
+    item: "Banana",
+    milk: "550",
+    white: "650",
+    strawberry: "700",
+    nutella: "700",
+  },
+  {
+    item: "Strawberry",
+    milk: "750",
+    white: "800",
+    strawberry: "850",
+    nutella: "850",
+  },
+  {
+    item: "Corn Flakes",
+    milk: "650",
+    white: "700",
+    strawberry: "800",
+    nutella: "800",
+  },
+  {
+    item: "Cadbury Chocolate",
+    milk: "900",
+    white: "950",
+    strawberry: "1100",
+    nutella: "1100",
+  },
+  {
+    item: "Snickers",
+    milk: "900",
+    white: "950",
+    strawberry: "1100",
+    nutella: "1100",
+  },
+  {
+    item: "Nut Crunch",
+    milk: "800",
+    white: "800",
+    strawberry: "950",
+    nutella: "950",
+  },
+  {
+    item: "KitKat",
+    milk: "850",
+    white: "850",
+    strawberry: "950",
+    nutella: "950",
+  },
+  {
+    item: "Marshmallows",
+    milk: "600",
+    white: "650",
+    strawberry: "790",
+    nutella: "790",
+  },
 ];
 
 const gallery = ["🧇", "🍓", "🥞", "🍫", "🍌", "🍯"];
@@ -59,7 +169,7 @@ export default function App() {
           <a href="#home" className="logo"><span>Choco</span> Lips</a>
           <div className="nav-links">
             <a href="#menu">Menu</a>
-            <a href="#favorites">Favorites</a>
+            <a href="#favorites">Pricing</a>
             <a href="#gallery">Gallery</a>
             <a href="#visit">Visit</a>
           </div>
@@ -70,7 +180,7 @@ export default function App() {
           <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="pill"><Sparkles size={18} /> Fresh desserts made daily</div>
             <h1>Waffles, Crepes & Sweet Plates That Make You Smile.</h1>
-            <p className="hero-text">A cozy dessert shop serving golden waffles, soft crepes, fluffy pancakes, and colorful fruit platters made fresh for every craving.</p>
+            <p className="hero-text">A cozy dessert shop serving freshly made sweet waffles, crepes, churros and signature dessert platters prepared for every craving.</p>
             <div className="hero-actions">
               <a href="#menu" className="primary-button">Explore Menu</a>
               <a href="#visit" className="secondary-button">Find Location</a>
@@ -79,8 +189,8 @@ export default function App() {
 
           <div className="dessert-art">
             <motion.div variants={floatingAnimation} animate="animate" className="float-card card-one"><div>🧇</div><p>Chocolate Waffle</p></motion.div>
-            <motion.div variants={floatingAnimation} animate="animate" className="float-card card-two"><div>🍓</div><p>Fresh Fruits</p></motion.div>
-            <motion.div variants={floatingAnimation} animate="animate" className="float-card card-three"><div>🥞</div><p>Fluffy Pancakes</p></motion.div>
+            <motion.div variants={floatingAnimation} animate="animate" className="float-card card-two"><div>🍫</div><p>Churros</p></motion.div>
+            <motion.div variants={floatingAnimation} animate="animate" className="float-card card-three"><div>🧇</div><p>Waffle Platter</p></motion.div>
             <motion.div variants={floatingAnimation} animate="animate" className="float-card card-four"><div>🍫</div><p>Sweet Crepes</p></motion.div>
             <div className="center-shadow" />
             <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="center-dessert">🍰</motion.div>
@@ -101,24 +211,148 @@ export default function App() {
         </div>
       </section>
 
-      <section id="favorites" className="favorites-section">
-        <div className="favorites-grid">
-          <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <p className="eyebrow light">Signature menu</p>
-            <h2>Customer favorites</h2>
-            <p>Perfect for dine-in, takeaway, birthday treats, date nights, or a sweet evening with friends.</p>
-          </motion.div>
-          <div className="menu-grid">
-            {menuItems.map((item, index) => (
-              <motion.div key={item.name} initial={{ opacity: 0, scale: 0.92 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: index * 0.08 }} className="menu-card">
-                <span><Star size={20} /> {item.name}</span>
-                <strong>{item.price}</strong>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+    <section id="favorites" className="favorites-section">
 
+  {/* <div className="section-heading">
+    <p className="eyebrow light">Pricing</p>
+    <h2>Sweet Waffles</h2>
+
+    <p>
+      Choose from Milk Choco, White Choco,
+      Strawberry or Nutella spreads.
+    </p>
+  </div> */}
+
+  <section id="favorites" className="favorites-section">
+  <div className="section-heading">
+    <p className="eyebrow light">Pricing</p>
+    <h2>Sweet Waffles</h2>
+    <p>
+      Choose from Milk Choco, White Choco,
+      Strawberry or Nutella spreads.
+    </p>
+
+    
+  </div>
+</section>
+
+  <div className="pricing-table-wrapper">
+    
+    <table className="pricing-table">
+
+      <thead>
+        
+        <tr>
+          <th>Item</th>
+          <th>Milk</th>
+          <th>White</th>
+          <th>Strawberry</th>
+          <th>Nutella</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        {menuPricing.map((item) => (
+
+          <tr key={item.item}>
+
+            <td>{item.item}</td>
+
+            <td>{item.milk}</td>
+
+            <td>{item.white}</td>
+
+            <td>{item.strawberry}</td>
+
+            <td>{item.nutella}</td>
+
+          </tr>
+
+        ))}
+
+      </tbody>
+
+    </table>
+<p className="swipe-hint">
+      ← Swipe horizontally →
+    </p>
+  </div>
+
+
+  <div style={{ height: "70px" }} />
+
+
+  <div className="section-heading">
+
+    <p className="eyebrow light">Pricing</p>
+
+    <h2>Sweet Crepes</h2>
+
+    <p>
+
+      Same pricing applies to Sweet Crepes.
+
+    </p>
+
+  </div>
+
+
+  <div className="pricing-table-wrapper">
+
+    <table className="pricing-table">
+
+      <thead>
+
+        <tr>
+
+          <th>Item</th>
+
+          <th>Milk</th>
+
+          <th>White</th>
+
+          <th>Strawberry</th>
+
+          <th>Nutella</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        {menuPricing.map((item) => (
+
+          <tr key={`crepe-${item.item}`}>
+
+            <td>{item.item}</td>
+
+            <td>{item.milk}</td>
+
+            <td>{item.white}</td>
+
+            <td>{item.strawberry}</td>
+
+            <td>{item.nutella}</td>
+
+          </tr>
+
+        ))}
+
+      </tbody>
+
+    </table>
+<p className="swipe-hint">
+      ← Swipe horizontally →
+    </p>
+  </div>
+
+</section>
+
+    
       <section className="section">
         <div className="why-grid">
           {[
@@ -136,7 +370,7 @@ export default function App() {
       </section>
 
       <section id="gallery" className="section">
-        <SectionHeading eyebrow="Gallery" title="Desserts worth sharing" text="Use this section for real shop photos later. For now, it gives the page a playful animated gallery feel." />
+        <SectionHeading eyebrow="Gallery" title="Our Dessert Collection" text="Fresh waffles, crepes, churros and dessert platters made with premium ingredients." />
         <div className="gallery-grid">
           {gallery.map((item, index) => (
             <motion.div key={`${item}-${index}`} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ scale: 1.08, rotate: index % 2 === 0 ? 3 : -3 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: index * 0.07 }} className="gallery-card">
